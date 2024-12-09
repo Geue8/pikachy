@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <h2>SIGN UP</h2>
+        <form action="" onsubmit="SignUp(); return false;">
+            <table>
+                <tr><td><input type="text" name="username" id="u_sername" placeholder="Username" autocomplete="username" required></td></tr>
+                <tr><td><input type="password" name="password" id="p_assword" placeholder="Password" autocomplete="new-password" required></td></tr>
+                <tr><td><button type="submit">Sign Up</button></td></tr>
+            </table>
+        </form>
+        <div class="link">
+            <a href="#">Forgot password?</a>
+        </div>
+    </div>
+        
+    <div class="form">
+        <h2>LOG IN</h2>
+        <form action="" onsubmit="LogIn(); return false;">
+            <table>
+                <tr><td><input type="text" name="Adminname" id="username_a" placeholder="Username" autocomplete="username" required></td></tr>
+                <tr><td><input type="password" name="adminpass" id="password_a" placeholder="Password" autocomplete="new-password" required></td></tr>
+                <tr><td><button type="submit">Log in</button></td></tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+
+<script>
+    function SignUp() {
+        const username = document.getElementById("u_sername").value;
+        const password = document.getElementById("p_assword").value;
+
+        let users = JSON.parse(localStorage.getItem('users')) || [];
+        users.push({
+            u_sername:username,
+            p_assword:password
+        });
+
+        localStorage.setItem('users', JSON.stringify(users));
+        console.log(username, password);
+
+        document.getElementById("u_sername").value= '';
+        document.getElementById("p_assword").value = '';
+        alert("You have been successfully signed up!");
+    }
+
+    function LogIn() {
+        const username = document.getElementById("username_a").value;
+        const password = document.getElementById("password_a").value;
+
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const user = users.find(user => user.u_sername === username && user.p_assword === password);
+
+        if (user) {
+            alert("Login successful");
+            console.log("Logged in user:", user);
+        } else {
+            alert("Invalid credentials");
+            console.log("No matching user found");
+        }
+}
+
+</script>  
+
+</html>

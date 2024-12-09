@@ -1,0 +1,58 @@
+body{
+    background-image: url(pika.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    
+}
+
+.box{
+    width: 25%;
+    margin-left: 20%;
+    margin-top: 6px;
+    float: left;
+    padding: 5px;
+    border: solid 1px black;
+    border-radius: 10px;
+    backdrop-filter: blur(15px);
+    box-shadow: 1px 1px 10px 10px rgb(236, 232, 91);
+}
+
+input{
+    width: 200px;
+    padding: 10px;
+    margin-top: 30px;
+    border-radius: 10px;
+    margin-left: 30px;
+}
+
+h2{
+    text-align: center;
+    color:red ;
+}
+
+button{
+    height: 40px;
+    width: 100px;
+    margin-top: 30px ;
+    background-color:grey;
+    border-radius: 10px;
+    margin-left: 90px;
+}
+.link{
+    margin-top: 20px;
+    margin-left: 90px;
+    padding-bottom: 30px;
+}
+
+.form{
+    width: 25%;
+    margin-left: 50%;
+    margin-top: 15%;
+    height: 365px;
+    padding: 5px;
+    border: solid 1px black;
+    border-radius: 10px;
+    backdrop-filter: blur(15px);
+    box-shadow: 1px 1px 10px 10px rgb(236, 232, 91);
+}
